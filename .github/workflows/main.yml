@@ -11,4 +11,4 @@ jobs:
         with:
           sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
       - name: sfdx-test-run
-        run: sfdx force:apex:test:run -l RunAllTestsInOrg -w 20  -u installTesting
+        run: sfdx force:apex:test:run -l RunAllTestsInOrg -w 20
