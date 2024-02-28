@@ -20,10 +20,6 @@ jobs:
             echo "Displaying Org details..."
             echo "-------------------------"
             sfdx force:org:display
-            
-            echo "Displaying User details..."
-            echo "-------------------------"
-            sfdx force:user:display
 
             # echo "Validating source to target org..."
             # echo "-------------------------"
