@@ -8,5 +8,24 @@ jobs:
       - uses: sfdx-actions/setup-sfdx@v1
         with:
           sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
-      - name: sfdx-status-check
-        run: sfdx force:source:status
+      - name: Checkout source code
+        uses: actions/checkout@v2l
+        
+      - name: 'Validating Source to org'
+        run: |
+            # following usage fir Demo only, "SFDX version" | "Displaying Org details" | "Displaying User details"
+            echo "SFDX version"
+            echo "-------------------------"
+            sfdx -v
+            echo "Displaying Org details..."
+            echo "-------------------------"
+            sfdx force:org:display
+            
+            echo "Displaying User details..."
+            echo "-------------------------"
+            sfdx force:user:display
+
+            # echo "Validating source to target org..."
+            # echo "-------------------------"
+            # no need to specify --targetusername
+            sfdx force:source:deploy -p force-app/main/default -c
