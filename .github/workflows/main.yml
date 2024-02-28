@@ -9,7 +9,7 @@ jobs:
         with:
           sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
       - name: Checkout source code
-        uses: actions/checkout@v2l
+        uses: actions/checkout@v4.1.1
         
       - name: 'Validating Source to org'
         run: |
